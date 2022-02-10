@@ -214,7 +214,24 @@ li.product{
   display: flex;
 }
 
+.shop-page-filter-drawer {
+  display: none;
+  position: fixed;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  left: 0;
+  z-index: 200;
+  overflow-y: auto;
+  border-right: 1px solid #e9e9e9;
+}
+
+
+
 @media only screen and (max-width: 1024px) {
+
+
+
   .post-type-archive-product
   #shop-page-sidebar {
     width: 20%;
@@ -233,6 +250,35 @@ li.product{
     // margin-bottom: 20px;
     display: block;
   }
+
+  .shop-page-filter-drawer {
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    left: 0;
+    z-index: 200;
+    overflow-y: auto;
+    border-right: 1px solid #e9e9e9;
+  }
+
+  .shop-page-filter-drawer
+  .woocommerce-drawer-menu-close-button
+  .fa-times  {
+    float: right;
+    padding: 15px;
+    font-size: 18px;
+    color: var(--text-color);
+  }
+
+  .shop-page-filter-drawer
+  #shop-page-sidebar {
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+  
 
 }
 

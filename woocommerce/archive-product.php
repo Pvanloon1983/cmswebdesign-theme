@@ -18,21 +18,6 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
-?>
-<div class="main-content">
-	<div class="page-title-bread-crumb-container">
-		<?php woocommerce_breadcrumb(); ?>
-		<h1 class="page-title container"><?php woocommerce_page_title(); ?></h1>
-	</div>
-	<div class="container">	
-<?php
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action( 'woocommerce_sidebar' );
-
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -40,11 +25,14 @@ do_action( 'woocommerce_sidebar' );
  * @hooked woocommerce_breadcrumb - 20
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
+
+
+
 do_action( 'woocommerce_before_main_content' );
 
 ?>
 <header class="woocommerce-products-header">
-	<?php if ( apply_filters( 'woocommerce_show_page_title', false ) ) : ?>
+	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>
 
@@ -108,8 +96,12 @@ if ( woocommerce_product_loop() ) {
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action( 'woocommerce_after_main_content' );
-?>
-</div>
-</div>
-<?php
+
+/**
+ * Hook: woocommerce_sidebar.
+ *
+ * @hooked woocommerce_get_sidebar - 10
+ */
+do_action( 'woocommerce_sidebar' );
+
 get_footer( 'shop' );

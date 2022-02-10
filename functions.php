@@ -50,11 +50,59 @@ add_action( 'init', 'cmswebdesign_register_menus' );
 
 function cmswebdesign_add_woocommerce_support() {
   add_theme_support( 'woocommerce' );
+  add_theme_support( 'wc-product-gallery-lightbox' );
+  add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'cmswebdesign_add_woocommerce_support' );
 
-// Remove breadcrumb
+/*
+* #.# Customer Woocommerce styling
+*
+*/
+
+// Remove default breadcrumb
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+
+// Remove woocommerce default page title through filter
+function cmswebdesign_remove_woocommerce_default_title($value) {
+  $value = false;
+  return $value;
+}
+add_filter('woocommerce_show_page_title', 'cmswebdesign_remove_woocommerce_default_title');
+
+// Add custom title, custom main-content, breadcrumb and container box shop page
+function cmswebdesign_add_custom_containers_shop_before() {
+  ?>
+
+  <div class="shop-page-filter-drawer">
+    <div class="woocommerce-drawer-menu-close-button">
+      <i class="fas fa-times"></i>
+    </div>  
+    <div id="shop-page-sidebar" class="sidebar">
+      <?php dynamic_sidebar( 'shop-page-sidebar' ); ?>
+    </div>
+  </div>
+
+  <div class="main-content">
+  <div class="page-title-bread-crumb-container">
+		<?php woocommerce_breadcrumb(); ?>
+		<h1 class="page-title container"><?php woocommerce_page_title(); ?></h1>
+	</div>
+	<div class="container">
+
+  <?php 
+}
+add_action('woocommerce_before_main_content', 'cmswebdesign_add_custom_containers_shop_before', 1 );
+
+function cmswebdesign_add_custom_containers_shop_after() {
+  ?>
+
+  </div>
+  </div>
+
+  <?php 
+}
+add_action('woocommerce_after_main_content', 'cmswebdesign_add_custom_containers_shop_after', 11 );
 
 /**
  * #.# Show cart contents / total Ajax
@@ -95,18 +143,22 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'cmswebdesign_category_si
 
 
 /**
- * #.# Show sidebar on woocommerce shop pages
+ * #.# Woocommerce sidebar shop pages
  * 
  */
-// define the woocommerce_sidebar callback 
+
+// Remove default woocommerce sidebar
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar'); 
 
-function cmswebdesign_custom_shop_page_siderbar() {
+// Adding custom sidebar
+function cmswebdesign_add_sidebar_before_main_content() { 
+
   echo '<div id="shop-page-sidebar" class="sidebar">';
   dynamic_sidebar( 'shop-page-sidebar' );
   echo '</div>';
+
 }
-add_action( 'woocommerce_sidebar', 'cmswebdesign_custom_shop_page_siderbar');
+add_action('woocommerce_before_main_content', 'cmswebdesign_add_sidebar_before_main_content', 2);
 
 
 /*
@@ -143,22 +195,6 @@ add_action( 'woocommerce_before_shop_loop', 'fwp_wrapper_open', 5 );
 add_action( 'woocommerce_after_shop_loop', 'fwp_wrapper_close', 15 );
 add_action( 'woocommerce_no_products_found', 'fwp_wrapper_open', 5 );
 add_action( 'woocommerce_no_products_found', 'fwp_wrapper_close', 15 );
-
-
-// function cmswebdesign_before_main_content_shop_page() {
-
-//   echo '<div class="main-content">';
-//   echo '<div class="container">';
-// }
-// add_action( 'woocommerce_before_main_content', 'cmswebdesign_before_main_content_shop_page' );
-
-// function cmswebdesign_after_main_content_shop_page() {
-
-//   echo '</div>';
-//   echo '</div>';
-
-// }
-// add_action( 'woocommerce_after_main_content', 'cmswebdesign_after_main_content_shop_page' );
 
 /**
  * #.# Filter the except length to 20 words.
