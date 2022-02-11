@@ -11,6 +11,8 @@
 
       <div class="blog-article">
 
+      <div class="breadcrumb"><?php the_breadcrumb(); ?></div>  
+
           <div class="blog-title-meta">
             <small class="posted-time"><?php the_time('j F, Y'); ?> | door <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>"><?php the_author_meta( 'first_name' ); ?> <?php // the_author_meta( 'last_name' ); ?></a></small><br>            
 

@@ -18,6 +18,64 @@ function add_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+
+/*
+* #.# Breadcrumbs
+*
+*/
+function the_breadcrumb() {
+
+  $sep = ' » ';
+
+  if (!is_front_page()) {
+
+      echo '<div class="breadcrumbs">';
+      echo '<a href="';
+      echo get_option('home');
+      echo '">';
+      // bloginfo('name');
+      echo 'Home';
+      echo '</a>' . $sep;
+
+      if (is_category() || is_single() ){
+          the_category('title_li=');
+      } elseif (is_archive() || is_single()){
+          if ( is_day() ) {
+              printf( __( '%s', 'text_domain' ), get_the_date() );
+          } elseif ( is_month() ) {
+              printf( __( '%s', 'text_domain' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'text_domain' ) ) );
+          } elseif ( is_year() ) {
+              printf( __( '%s', 'text_domain' ), get_the_date( _x( 'Y', 'yearly archives date format', 'text_domain' ) ) );
+          } else {
+              _e( 'Blog Archives', 'text_domain' );
+          }
+      }
+
+      if (is_single()) {
+          echo $sep;
+          the_title();
+      }
+
+      if (is_page()) {
+          echo the_title();
+      }
+
+      if (is_home()){
+          global $post;
+          $page_for_posts_id = get_option('page_for_posts');
+          if ( $page_for_posts_id ) { 
+              $post = get_page($page_for_posts_id);
+              setup_postdata($post);
+              the_title();
+              rewind_posts();
+          }
+      }
+
+      echo '</div>';
+  }
+}
+
+
 /**
  * #.# Theme supports
  * 
@@ -70,7 +128,7 @@ function cmswebdesign_remove_woocommerce_default_title($value) {
 }
 add_filter('woocommerce_show_page_title', 'cmswebdesign_remove_woocommerce_default_title');
 
-// Add custom title, custom main-content, breadcrumb and container box shop page
+// Add custom title, custom main-content, breadcrumb, sidebar and container box shop page
 function cmswebdesign_add_custom_containers_shop_before() {
   ?>
 
@@ -86,13 +144,25 @@ function cmswebdesign_add_custom_containers_shop_before() {
   <div class="main-content">
   <div class="page-title-bread-crumb-container">
 		<?php woocommerce_breadcrumb(); ?>
-		<h1 class="page-title container"><?php woocommerce_page_title(); ?></h1>
+		<!-- <h1 class="page-title container"><?php // woocommerce_page_title(); ?></h1> -->
 	</div>
 	<div class="container">
 
   <?php 
 }
 add_action('woocommerce_before_main_content', 'cmswebdesign_add_custom_containers_shop_before', 1 );
+
+
+/**
+ * Change the breadcrumb separator
+ */
+add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_delimiter' );
+function wcc_change_breadcrumb_delimiter( $defaults ) {
+	// Change the breadcrumb delimeter from '/' to '>'
+	$defaults['delimiter'] = ' &#187; ';
+	return $defaults;
+}
+
 
 function cmswebdesign_add_custom_containers_shop_after() {
   ?>
@@ -162,7 +232,7 @@ add_action('woocommerce_before_main_content', 'cmswebdesign_add_sidebar_before_m
 
 
 /*
-* #.# Sidebar drawer
+* #.# Sidebar drawer button
 *
 */
 
@@ -171,15 +241,7 @@ function cmswebdesign_add_sidebar_button() {
   echo '<button class="sidebar-drawer-button"><i class="fa-solid fa-sliders"></i> Filter</button>';
 
 }
-add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_sidebar_button', 9);
-
-function cmswebdesign_add_sidebar() {
-
-  echo '<button class="sidebar-drawer-button"><i class="fa-solid fa-sliders"></i> Filter</button>';
-
-}
-add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_sidebar_button', 9);
-
+add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_sidebar_button', 1);
 
 /*
 * #.# Woocommerce facetwp modifications shop page
@@ -246,5 +308,6 @@ function cmswebdesign_widgets_init() {
       'after_title'   => '</h3>',
     )
   );
+
 }
 add_action( 'widgets_init', 'cmswebdesign_widgets_init' );

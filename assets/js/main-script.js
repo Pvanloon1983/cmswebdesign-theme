@@ -147,9 +147,6 @@ jQuery(document).ready(function ($) {
    */
 
   $('.sidebar-drawer-button').click(function () {
-
-    alert('test');
-
     $('.shop-page-filter-drawer').toggle('slide', { direction: 'left' }, 300);
   });
 
