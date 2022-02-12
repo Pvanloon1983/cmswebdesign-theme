@@ -258,6 +258,43 @@ add_action( 'woocommerce_after_shop_loop', 'fwp_wrapper_close', 15 );
 add_action( 'woocommerce_no_products_found', 'fwp_wrapper_open', 5 );
 add_action( 'woocommerce_no_products_found', 'fwp_wrapper_close', 15 );
 
+/*
+* #.# Single product page
+*
+*/
+function cmswebdesign_add_breadcrumb_above_title() {
+
+  woocommerce_breadcrumb();
+
+}
+add_action('woocommerce_single_product_summary', 'cmswebdesign_add_breadcrumb_above_title', 1);
+
+/*
+* #.# Checkout styling
+*
+*/
+
+/* Change position heading order review */
+function cmswebdesign_add_heading_above_order() {
+  ?>
+
+  <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
+
+  <?php
+}
+add_action('woocommerce_checkout_order_review', 'cmswebdesign_add_heading_above_order', 1 );
+
+/*
+* #.# Cart page styling
+*
+*/
+function cmswebdesign_add_breadcrumb() {
+
+  woocommerce_breadcrumb();
+
+}
+add_action('woocommerce_before_cart', 'cmswebdesign_add_breadcrumb');
+
 /**
  * #.# Filter the except length to 20 words.
  *  
