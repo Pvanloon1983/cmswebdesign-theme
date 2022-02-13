@@ -184,8 +184,7 @@ function cmswebdesign_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 
 	?>
-	<!-- <span class="items"><?php // echo WC()->cart->get_cart_contents_count(); ?></span> -->
-	<span class="items"><?php echo WC()->cart->get_cart_total(); ?></span>
+	<span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?> - <?php echo WC()->cart->get_cart_total(); ?></span>
 	<?php
 	$fragments['span.items'] = ob_get_clean();
 	return $fragments;
@@ -294,6 +293,28 @@ function cmswebdesign_add_breadcrumb() {
 
 }
 add_action('woocommerce_before_cart', 'cmswebdesign_add_breadcrumb');
+
+/*
+* #.# Checkout page
+*
+*/
+function cmswebdesign_woocommerce_before_checkout_form() {
+
+  woocommerce_breadcrumb();
+
+}
+add_action('woocommerce_before_checkout_form', 'cmswebdesign_woocommerce_before_checkout_form', 1);
+
+/*
+* #.# Thank you page
+*
+*/
+function cmswebdesign_woocommerce_before_thankyou() {
+
+  // woocommerce_breadcrumb();
+
+}
+add_action('woocommerce_before_thankyou', 'cmswebdesign_woocommerce_before_thankyou', 1 );
 
 /**
  * #.# Filter the except length to 20 words.

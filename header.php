@@ -49,7 +49,8 @@
 
             <div class="cart-heading">
             <a href="<?php echo wc_get_cart_url(); ?>"><i class="fas fa-shopping-cart"></i>
-            <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span></a>
+            <!-- <span class="items"><?php // echo WC()->cart->get_cart_contents_count(); ?></span></a> -->
+            <span class="items"><?php echo WC()->cart->get_cart_total(); ?></span></a>
             </div>
 
             <button class="btn btn-3 btn-search"><i class="fas fa-search"></i></button>
