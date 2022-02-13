@@ -174,6 +174,21 @@ function cmswebdesign_add_custom_containers_shop_after() {
 }
 add_action('woocommerce_after_main_content', 'cmswebdesign_add_custom_containers_shop_after', 11 );
 
+
+/*
+* #.# Output customer order details on thank you page
+*
+*/
+function cmswebdesign_adding_customers_details_to_thankyou( $order_id ) {
+    // Only for non logged in users
+    if ( ! $order_id || is_user_logged_in() ) return;
+
+    $order = wc_get_order($order_id); // Get an instance of the WC_Order object
+
+    wc_get_template( 'order/order-details-customer.php', array('order' => $order ));
+}
+add_action( 'woocommerce_thankyou', 'cmswebdesign_adding_customers_details_to_thankyou', 10, 1 );
+
 /**
  * #.# Show cart contents / total Ajax
  * 
