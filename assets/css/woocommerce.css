@@ -329,6 +329,53 @@ li.product{
 .woocommerce-cart
 .main-content {
   padding-top: 100px;
+  margin-bottom: 20px;
+}
+
+.woocommerce-cart
+#coupon_code {
+  height: 35px;
+  width: auto;
+}
+
+.woocommerce-cart
+.wc-proceed-to-checkout a {
+  border: none !important;
+  padding: 11px  !important;
+  cursor: pointer !important;
+  color: #444 !important;
+  background-color: #e9e9e9 !important;
+  font-size: 16px !important;
+  margin-bottom: 0px !important;
+}
+
+.woocommerce-cart
+.woocommerce-notices-wrapper
+.woocommerce-message {
+  margin-bottom: 10px;
+}
+
+/* Hide the "x" */
+ 
+a.remove {
+  text-indent: -9999px;
+  border: 0;
+  color: transparent;
+}
+
+.woocommerce a.remove {
+  background-color: transparent !important;
+}
+/* Add a Fontawesome icon instead */
+/* Learn More in the Following Paragraphs */
+
+a.remove:before {
+  font-family: FontAwesome;
+  content: "\f2ed";
+  float: left;
+  text-indent: 0;
+  font-size: 16px;
+  color: #8c8c8c;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -384,6 +431,35 @@ li.product{
   
 
 }
+
+@media only screen and (max-width: 600px) {
+
+  /*
+  * #.# Cart page
+  *
+  */
+  .woocommerce-cart
+  .coupon {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .woocommerce-cart
+  .coupon
+  #coupon_code {
+    margin-right: 0px;
+  }
+
+  .woocommerce-cart
+  .coupon .button { 
+    display: block !important;
+    width: 100% !important;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
+}
+
 
 @media only screen and (max-width: 480px) {
 

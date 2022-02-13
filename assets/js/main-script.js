@@ -242,4 +242,7 @@ jQuery(document).ready(function ($) {
       $(this).next('.menu-drop-down-icon-down-mobile').click();
     }
   });
+
+
+
 });
