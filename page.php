@@ -6,7 +6,7 @@ get_header(); ?>
   <!-- Background will automatically be generated is there is no thumbnail -->
   <div class="container">
     
-    <h1 class="page-title"><?php the_title(); ?></h1>
+    <!-- <h1 class="page-title"><?php // the_title(); ?></h1> -->
 
      <?php 
       if ( have_posts() ) : 

@@ -535,9 +535,109 @@ a.remove:before {
   color: #8c8c8c;
 }
 
+/*
+* #.# Thank you page after order
+*
+*/
+.woocommerce-order-received
+.woocommerce-order-details {
+  max-width: 400px;
+}
+
+.woocommerce-order-received
+.woocommerce-customer-details {
+  max-width: 400px;
+}
+
+/*
+* #.# Account page 
+*
+*/
+.woocommerce-account
+.page-title {
+  display: none;
+}
+
+.woocommerce-account
+.main-content {
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.woocommerce-account
+.woocommerce-MyAccount-content {
+  // border: 1px solid #e9e9e9;
+  // padding: 15px 15px 0px 15px;
+  // border-radius: 5px;
+}
+
+.woocommerce-account
+.woocommerce-EditAccountForm input {
+  font-size: 16px;
+  padding: 8px;
+}
+
+.woocommerce-account
+.woocommerce-EditAccountForm fieldset {
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.woocommerce-account
+.woocommerce-EditAccountForm label {
+  font-weight: 600;
+}
+.woocommerce-account
+.woocommerce-MyAccount-content > p {
+  margin-top: 0px;
+}
+
+.woocommerce-account
+.woocommerce-Addresses div {
+  border: 1px solid #e9e9e9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.woocommerce-account
+.woocommerce-customer-details 
+address {
+  border: 1px solid #e9e9e9;
+}
+
+.woocommerce-account
+.woocommerce-Addresses div a {
+  text-decoration: none;
+}
+
+.woocommerce-account
+.woocommerce-MyAccount-navigation {
+  border: 1px solid #e9e9e9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.woocommerce-account
+.woocommerce-MyAccount-navigation ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.woocommerce-account
+.woocommerce-MyAccount-navigation ul li {
+  padding: 5px 0px;
+}
+
+.woocommerce-account
+.woocommerce-MyAccount-navigation ul li a {
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 1024px) {
-
-
 
   .woocommerce
   #shop-page-sidebar {

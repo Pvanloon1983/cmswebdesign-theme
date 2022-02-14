@@ -1,3 +1,14 @@
+<?php 
+/**
+ * The template for displaying the footer
+ * 
+ * Contains everything after the <div class="index-content"> closing section
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package CMS Webdesign starter
+ */
+?>
 <footer class="footer">
   <div class="container">
     <div class="footer-widgets">

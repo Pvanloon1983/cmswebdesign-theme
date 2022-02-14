@@ -348,6 +348,18 @@ function cmswebdesign_woocommerce_before_thankyou() {
 }
 add_action('woocommerce_before_thankyou', 'cmswebdesign_woocommerce_before_thankyou', 1 );
 
+/*
+* #.# Account page dashboard
+*
+*/
+function cmswebdesign_add_breadcrumb_to_account_dashboard() {
+
+  woocommerce_breadcrumb();
+
+}
+add_action('woocommerce_before_account_navigation', 'cmswebdesign_add_breadcrumb_to_account_dashboard', 20);
+
+
 /**
  * #.# Filter the except length to 20 words.
  *  

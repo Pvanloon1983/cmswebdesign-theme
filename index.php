@@ -1,13 +1,21 @@
 <?php 
-/*
-This is the Blog page
-*/
+/**
+ * The main template file which is used for all the blog posts
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package CMS Webdesign starter
+ */
 
 get_header(); ?>
 
 <div class="main-content index-content">
   <div class="container">  
-
 
     <!-- <div class="page-title-container">
       <h1 class="page-title">Blog</h1>    
