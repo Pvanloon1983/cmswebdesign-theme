@@ -1,14 +1,23 @@
 <?php
+/**
+ * CMS Webdesign functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package CMS Webdesign Starter
+ * 
+ * Remove time() for the scripts version number...
+ */
 
 function add_theme_scripts() {
  
-  wp_enqueue_style( 'cmswebdesign-font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), '', 'all');
-  wp_enqueue_style( 'cmswebdesign-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), '', 'all');
-  wp_enqueue_style( 'cmswebdesign-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce.css', array(), '', 'all');
-  wp_enqueue_style( 'cmswebdesign-tablet-style', get_template_directory_uri() . '/assets/css/smaller-screens.css', array(), '', 'all');
-  wp_enqueue_style( 'cmswebdesign-spinner-style', get_template_directory_uri() . '/assets/css/spinner.css', array(), '', 'all');
+  wp_enqueue_style( 'cmswebdesign-font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), time(), 'all');
+  wp_enqueue_style( 'cmswebdesign-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), time(), 'all');
+  wp_enqueue_style( 'cmswebdesign-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce.css', array(), time(), 'all');
+  wp_enqueue_style( 'cmswebdesign-tablet-style', get_template_directory_uri() . '/assets/css/smaller-screens.css', array(), time(), 'all');
+  wp_enqueue_style( 'cmswebdesign-spinner-style', get_template_directory_uri() . '/assets/css/spinner.css', array(), time(), 'all');
   
-  wp_enqueue_script( 'cmswebdesign-main-script', get_template_directory_uri() . '/assets/js/main-script.js', array ( 'jquery', 'jquery-effects-slide' ), '', true);
+  wp_enqueue_script( 'cmswebdesign-main-script', get_template_directory_uri() . '/assets/js/main-script.js', array ( 'jquery', 'jquery-effects-slide' ), time(), true);
 
   // This will output a script data in the html which can be used in other javascript scripts
   wp_localize_script('cmswebdesign-main-script', 'cmsstarterData', array(
@@ -18,29 +27,10 @@ function add_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
-
 /*
-* #.# Breadcrumbs
+* #.# Breadcrumbs on pages other than the woocommcerce pages
 *
 */
-// echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-// if (is_category() || is_single()) {
-//     echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-//     the_category(' &bull; ');
-//         if (is_single()) {
-//             echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-//             the_title();
-//         }
-// } elseif (is_page()) {
-//     echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-//     echo the_title();
-// } elseif (is_search()) {
-//     echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
-//     echo '"<em>';
-//     echo the_search_query();
-//     echo '</em>"';
-// }
-
 function the_breadcrumb() {
 
   $sep = ' » ';
@@ -404,6 +394,47 @@ function cmswebdesign_widgets_init() {
     array(
       'name'          => 'Shop page sidebar',
       'id'            => 'shop-page-sidebar',
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    )
+  );
+
+  register_sidebar(
+    array(
+      'name'          => 'Footer widget one',
+      'id'            => 'footer-widget-one',
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    )
+  );
+  register_sidebar(
+    array(
+      'name'          => 'Footer widget two',
+      'id'            => 'footer-widget-two',
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    )
+  );
+  register_sidebar(
+    array(
+      'name'          => 'Footer widget three',
+      'id'            => 'footer-widget-three',
+      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</aside>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>',
+    )
+  );
+  register_sidebar(
+    array(
+      'name'          => 'Footer widget four',
+      'id'            => 'footer-widget-four',
       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
       'after_widget'  => '</aside>',
       'before_title'  => '<h3>',

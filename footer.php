@@ -13,24 +13,25 @@
   <div class="container">
     <div class="footer-widgets">
       <div class="widget-column-1">
-        <div class="widget">
-        <h3>Widget 1</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptas atque optio accusamus laborum? Dolores accusantium quidem possimus provident asperiores ab libero quasi pariatur, illum quisquam ex. Quidem, reiciendis quis.</p>
-        </div>
-        <div class="widget">
-        <h3>Widget 2</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptas atque optio accusamus laborum? Dolores accusantium quidem possimus provident asperiores ab libero quasi pariatur, illum quisquam ex. Quidem, reiciendis quis.</p>
-        </div>
+        <?php
+        if ( is_active_sidebar( 'footer-widget-one' ) ) {
+          dynamic_sidebar( 'footer-widget-one' );
+        }
+        if ( is_active_sidebar( 'footer-widget-two' ) ) {
+          dynamic_sidebar( 'footer-widget-two' );
+        }
+        ?>
       </div>
+
       <div class="widget-column-2">
-        <div class="widget">
-        <h3>Widget 3</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptas atque optio accusamus laborum? Dolores accusantium quidem possimus provident asperiores ab libero quasi pariatur, illum quisquam ex. Quidem, reiciendis quis.</p>
-        </div>
-        <div class="widget">
-        <h3>Widget 4</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptas atque optio accusamus laborum? Dolores accusantium quidem possimus provident asperiores ab libero quasi pariatur, illum quisquam ex. Quidem, reiciendis quis.</p>
-        </div>
+      <?php
+        if ( is_active_sidebar( 'footer-widget-three' ) ) {
+          dynamic_sidebar( 'footer-widget-three' );
+        }
+        if ( is_active_sidebar( 'footer-widget-four' ) ) {
+          dynamic_sidebar( 'footer-widget-four' );
+        }
+      ?>
       </div>
   </div>
 </footer>

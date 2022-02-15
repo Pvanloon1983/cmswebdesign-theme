@@ -363,6 +363,11 @@ li.product{
   padding-top: 20px;
 }
 
+.single-product
+.comment-form-comment {
+  display: flex;
+  flex-direction: column;
+}
 
 /* 
 * #.# Check out page
@@ -561,14 +566,15 @@ a.remove:before {
 .woocommerce-account
 .main-content {
   padding-top: 100px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .woocommerce-account
-.woocommerce-MyAccount-content {
-  // border: 1px solid #e9e9e9;
-  // padding: 15px 15px 0px 15px;
-  // border-radius: 5px;
+.woocommerce-EditAccountForm {
+  border: 1px solid #e9e9e9;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .woocommerce-account
@@ -635,6 +641,33 @@ address {
 .woocommerce-account
 .woocommerce-MyAccount-navigation ul li a {
   text-decoration: none;
+}
+
+/*
+* #.# Woocommerce account inlog/register page
+*
+*/
+.woocommerce-account
+.woocommerce-form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.woocommerce-account
+form.login, 
+.woocommerce form.register {
+  border: 1px solid #e9e9e9;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.woocommerce-account
+form.login {
+  margin-bottom: 30px;
+}
+
+.woocommerce-account h2 {
+  text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {

@@ -18,6 +18,15 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
         <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
         <?php wp_head(); ?>
+
+        <?php if( current_user_can('administrator')) {  ?>
+            <style>
+              body.logged-in > header {
+                margin-top: 32px;
+              }
+            </style>
+        <?php } ?>
+
     </head>
 <body <?php body_class(); ?>>
 <?php 
