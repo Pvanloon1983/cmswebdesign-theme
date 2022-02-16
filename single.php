@@ -35,6 +35,22 @@
             <small class="postmetadata"><?php _e( 'Categorie:' ); ?> <?php the_category( ', ' ); ?></small>
           </div>
 
+          <hr>
+
+          <h3>Nieuwste gerelateerde berichten</h3>
+          <div style="display: flex;">    
+            <?php  
+            $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 2, 'post__not_in' => array($post->ID) ) );
+            if( $related ) foreach( $related as $post ) {
+            setup_postdata($post); ?>
+            <div>
+              <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+              <?php the_excerpt(); ?>
+          </div>
+          <?php }
+          wp_reset_postdata(); ?>
+          </div>  
+
         </div>
 
       <!-- https://www.sktthemes.org/wordpress-plugins/wordpress-post-pagination-without-plugin/ -->
@@ -52,7 +68,6 @@
       
       ?>  
 
-
       <?php else : ?>
       <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
       <?php endif; ?> 
@@ -64,6 +79,8 @@
     </div> -->
 
   </div>
+
+  
 
   </div>
 </div>

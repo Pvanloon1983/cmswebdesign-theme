@@ -46,7 +46,7 @@
           if ( has_custom_logo() ) {
               echo '<a href="' . get_bloginfo( 'url' ) . '"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
           } else {
-              echo '<p>' . 'Logo' . '</p>';
+              echo '<p><a href="' . get_bloginfo( 'url' ) . '">Logo</a></p>';
           }
         ?>
       </div>

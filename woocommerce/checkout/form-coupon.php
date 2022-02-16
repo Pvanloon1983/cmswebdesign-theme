@@ -28,7 +28,14 @@ if ( ! wc_coupons_enabled() ) { // @codingStandardsIgnoreLine.
 
 <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
 
-	<p><?php esc_html_e( 'Als u een couponcode heeft, kunt u deze hieronder toepassen.', 'woocommerce' ); ?></p>
+  <p><?php 
+	
+	/*
+	* Is vertaald naar NL: Als u een couponcode heeft, kunt u deze hieronder toepassen
+	*/
+	esc_html_e( 'Als u een couponcode heeft, kunt u deze hieronder toepassen.', 'woocommerce' ); 
+	
+	?></p>
 
 	<p class="form-row form-row-first">
 		<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" />
