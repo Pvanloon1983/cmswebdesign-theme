@@ -151,7 +151,7 @@ function cmswebdesign_add_custom_containers_shop_before() {
   <div class="main-content">
   <div class="page-title-bread-crumb-container">
 		<?php woocommerce_breadcrumb(); ?>
-		<!-- <h1 class="page-title container"><?php // woocommerce_page_title(); ?></h1> -->
+		<h1 class="page-title container"><?php woocommerce_page_title(); ?></h1>
 	</div>
 	<div class="container">
 

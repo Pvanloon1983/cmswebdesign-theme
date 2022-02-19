@@ -655,7 +655,17 @@ textarea {
 .index-content 
 .blog-sidebar-container {
   flex: 25%;
+  padding: 0px;
+  margin-top: 141px;
 }
+
+.index-content 
+.blog-sidebar-container 
+aside {
+  border: 1px solid #e9e9e9;
+  min-width: 300px;
+}
+
 
 .index-content 
 .blog-article {
@@ -707,7 +717,7 @@ textarea {
 .index-content 
 .blog-article h3 {
   margin-top: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .index-content 
@@ -797,7 +807,7 @@ textarea {
 .page-title {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   font-size: 30px;
 }
 
@@ -834,8 +844,8 @@ aside ul li {
 .single-post 
 .blog-articles-container {
   max-width: 818px;
-  margin: 0 auto 30px auto;
-  border: 1px solid #e9e9e9;
+  margin: 0 auto 0px auto;
+  // border: 1px solid #e9e9e9;
 }
 
 .single-post 
@@ -845,6 +855,7 @@ aside ul li {
   border: none;
   margin-bottom: 0px;
   padding: 25px 20px 30px 20px;
+  margin-right: 0px;
 }
 
 .single-post 
@@ -855,9 +866,15 @@ aside ul li {
 
 .single-post 
 .blog-article 
+.blog-title-meta h1 {
+  margin-bottom: 5px;
+}
+
+.single-post 
+.blog-article 
 .blog-title-meta {
   text-align: left;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 .single-post 
@@ -878,10 +895,63 @@ aside ul li {
   height: 400px;
   width: 100%;
   object-fit: cover;
-  margin: 0 0 30px 0;
+  margin: 0 0 15px 0;
 }
 
 .single-post 
 .main-content {
   padding-bottom: 0px;
+}
+
+/*
+* #.# Related blog posts container
+*
+*/
+.single-post
+.related-blog-posts-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-post
+.related-blog-posts-container
+.realated-single-blog-post {
+  flex: 40%;
+  padding: 20px;
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+  max-width: 50%;
+}
+
+.single-post
+.related-blog-posts-container
+.realated-single-blog-post:nth-of-type(2) {
+  margin-left: 20px;
+}
+
+.single-post
+.related-blog-posts-container
+.realated-single-blog-post
+img {
+  width: 100%;
+  height: auto;
+}
+
+.single-post
+.related-blog-posts-hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid #e9e9e9;
+  margin: 20px 0;
+}
+
+.single-post
+.related-blog-posts-main-heading {
+  margin: 30px 0 20px 0 !important;
+}
+
+.single-post
+.related-blog-post-title {
+  margin: 0 !important;
+  margin-bottom: 5px !important;
 }
