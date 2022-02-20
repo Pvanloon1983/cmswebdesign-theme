@@ -150,15 +150,17 @@
   *
   */
 
-  .index-content .blog-article {
-    flex: 40%;
-    padding: 10px 20px 25px 20px;
-    margin: 0 15px 30px 0px;
-    background-color: #fff;
-    border: 1px solid #e9e9e9;
-    border-radius: 5px;
-    max-width: 49%;
+.index-content .blog-article {
+  flex: 40%;
+  padding: 10px 20px 25px 20px;
+  margin: 0 15px 30px 0px;
+  background-color: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+  max-width: 49%;
 }
+
+
 
 /* 
 * #.# Single blog posts
@@ -280,6 +282,8 @@
     margin: 0 0 30px 0;
   }
 
+
+
   .index-content
   .page-title {
     margin-bottom: 40px;
@@ -326,7 +330,7 @@
   .related-blog-posts-container
   .realated-single-blog-post:nth-of-type(2) {
     margin-left: 0;
-    margin-bottom: 20px;
+    margin-top: 15px;
   }
 
   
@@ -342,6 +346,11 @@
   .index-content 
   .blog-article {
     padding: 10px 10px 20px 10px;
+  }
+
+  .blog 
+  .blog-article {
+    padding: 10px 20px 20px 20px !important;
   }
 
   .index-content
@@ -399,7 +408,7 @@
     width: 100%;
     max-width: 818px;
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 5px !important;
     padding: 0px 0px 20px 0px;
   }
 
@@ -422,10 +431,6 @@
 
 @media only screen and (max-width: 480px) {
 
-/*
-* #.# Index / Blog articles loop content
-*
-*/
 
 
 }
@@ -433,6 +438,14 @@
 
 @media only screen and (max-width: 360px) {
 
+  /*
+  * #.# Index / Blog articles loop content
+  *
+  */
+  .blog 
+  .blog-article {
+    padding: 10px 10px 20px 10px !important;
+  }
   
 }
   

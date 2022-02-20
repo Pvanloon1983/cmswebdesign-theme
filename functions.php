@@ -151,7 +151,7 @@ function cmswebdesign_add_custom_containers_shop_before() {
   <div class="main-content">
   <div class="page-title-bread-crumb-container">
 		<?php woocommerce_breadcrumb(); ?>
-		<h1 class="page-title container"><?php woocommerce_page_title(); ?></h1>
+		<!-- <h1 class="page-title container"><?php // woocommerce_page_title(); ?></h1> -->
 	</div>
 	<div class="container">
 
@@ -175,6 +175,16 @@ function cmswebdesign_add_custom_containers_shop_after() {
   ?>
 
   </div>
+  </div>
+
+  <div class="filter-sorting-container">
+    <div class="btn-wrapper">
+      <button class="btn bottom-filter-button"><i class="fa-solid fa-filter"></i> Filter</button>
+    </div>
+    <div class="btn-wrapper bottom-sorting-button">
+      <button class="btn"><i class="fa-solid fa-sort"></i> Sorteer</button>
+      <div id="r">Test</div>
+    </div>
   </div>
 
   <?php 
@@ -263,6 +273,21 @@ function cmswebdesign_add_sidebar_button() {
 
 }
 add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_sidebar_button', 1);
+
+/*
+* #.# Category and Tag page
+*
+*/
+
+function cmswebdesign_add_page_title_cat_and_tag() {
+
+  if (is_product_category() || is_tag()) {
+?>
+  <h1 class="page-title container"><?php woocommerce_page_title(); ?></h1>
+<?php
+  }
+}
+add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_page_title_cat_and_tag', 15);
 
 /*
 * #.# Woocommerce facetwp modifications shop page

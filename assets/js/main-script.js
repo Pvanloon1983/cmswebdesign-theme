@@ -150,6 +150,11 @@ jQuery(document).ready(function ($) {
     $('.shop-page-filter-drawer').toggle('slide', { direction: 'left' }, 300);
   });
 
+  /* Bottom page filter button */
+  $('.bottom-filter-button').click(function () {
+    $('.shop-page-filter-drawer').toggle('slide', { direction: 'left' }, 300);
+  });
+
   // Close woocommerce filter sidebar
   $('.shop-page-filter-drawer .woocommerce-drawer-menu-close-button .fa-times').click(
     function () {
