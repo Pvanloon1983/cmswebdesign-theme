@@ -181,10 +181,9 @@ function cmswebdesign_add_custom_containers_shop_after() {
     <div class="btn-wrapper">
       <button class="btn bottom-filter-button"><i class="fa-solid fa-filter"></i> Filter</button>
     </div>
-    <div class="btn-wrapper bottom-sorting-button">
-      <button class="btn"><i class="fa-solid fa-sort"></i> Sorteer</button>
-      <div id="r">Test</div>
-    </div>
+    <!-- <div class="btn-wrapper bottom-sorting-button">
+      <button class="btn"><i class="fa-solid fa-sort"></i> Sorteer</button>      
+    </div> -->
   </div>
 
   <?php 
@@ -281,11 +280,18 @@ add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_sidebar_button', 1)
 
 function cmswebdesign_add_page_title_cat_and_tag() {
 
-  if (is_product_category() || is_tag()) {
-?>
-  <h1 class="page-title container"><?php woocommerce_page_title(); ?></h1>
-<?php
+  if (is_product_category()) {
+  ?>
+    <h1 class="page-title container"><?php _e( 'Categorie: ', 'my-theme' ) . woocommerce_page_title(); ?></h1>
+  <?php
   }
+
+  if (is_tag()) {
+    ?>
+      <h1 class="page-title container"><?php _e( 'Tag: ', 'my-theme' ) . woocommerce_page_title(); ?></h1>
+    <?php
+    }
+
 }
 add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_page_title_cat_and_tag', 15);
 
@@ -297,7 +303,8 @@ function fwp_wrapper_open() {
   if ( ! is_singular() ) : echo '<div class="facetwp-template">'; endif;
 }
 function fwp_wrapper_close() {
-  if ( ! is_singular() ) : echo '</div><!-- end facetwp-template -->'; endif;
+  if ( ! is_singular() ) : 
+  echo '</div><!-- end facetwp-template -->'; endif;
 }
 add_action( 'woocommerce_before_shop_loop', 'fwp_wrapper_open', 5 );
 add_action( 'woocommerce_after_shop_loop', 'fwp_wrapper_close', 15 );

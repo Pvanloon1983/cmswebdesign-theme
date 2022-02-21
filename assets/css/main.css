@@ -41,7 +41,7 @@ h4,
 h5,
 h6 {
   font-family: var(--global-font-heading);
-  line-height: 1.1em;
+  line-height: 1.2em;
   margin: 0 0 20px 0;
   color: var(--heading-color);
 }
@@ -110,7 +110,7 @@ textarea {
 }
 
 .index-content {
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 30px;
 }
 /**
@@ -629,6 +629,11 @@ textarea {
 * #.# Index / Blog / Archives articles loop content
 *
 */
+.blog
+.main-content {
+  padding-top: 100px;
+}
+
 .index-content
 .breadcrumb {
   margin-bottom: 20px;
@@ -841,6 +846,11 @@ aside ul li {
 * #.# Single blog page
 *
 */
+.single-post
+.index-content {
+  padding-top: 80px;
+}
+
 .single-post 
 .blog-articles-container {
   max-width: 818px;

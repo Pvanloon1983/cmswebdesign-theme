@@ -145,6 +145,44 @@ jQuery(document).ready(function ($) {
    * #.# Mobile filter woocommerce menu toggle
    *
    */
+    // jQuery(".orderby option").each(function(i, e) {
+    //   (jQuery("<input type='radio' name='r' />")
+    //     .attr("value", jQuery(this).val())
+    //     .attr("checked", i == 0)
+    //     .click(function() {
+    //         // jQuery(".orderby").val(jQuery(this).val()).prop('selected', true);
+
+    //         // jQuery(".orderby").dropdown( 'select', jQuery(this).val());
+
+    //         // $('select[name="orderby"]').change(function(){
+    //         //   alert(jQuery(this).val());
+    //         // });
+    //         $('.orderby option:selected').removeAttr('selected');
+
+    //         $(".orderby option[value='" + jQuery(this).val() + "']").attr("selected","selected");
+
+    //         $('.woocommerce-ordering select').change(function() {
+    //           this.form.submit();              
+    //         });
+
+    //         $('.orderby').trigger('change');          
+
+    //         // $('.orderby').change(function(){
+    //         //   // alert(jQuery(this).val());
+    //         //   jQuery('.woocommerce-ordering').submit();
+    //         // });
+
+    //         // jQuery(".woocommerce-ordering").on("change", "select.orderby", function() {
+    //         //   jQuery(this).closest("form").trigger("submit")
+    //         // })
+
+    //         // $('.orderby').trigger('change');
+
+    //     }).add(jQuery("<label>"+ this.textContent +"</label>")))
+    //     .appendTo("#r");
+    // });
+    
+
 
   $('.sidebar-drawer-button').click(function () {
     $('.shop-page-filter-drawer').toggle('slide', { direction: 'left' }, 300);
@@ -251,3 +289,7 @@ jQuery(document).ready(function ($) {
 
 
 });
+
+
+
+
