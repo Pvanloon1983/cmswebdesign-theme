@@ -1,85 +1,85 @@
 jQuery(document).ready(function ($) {
-  // Begin of live search script
-  let searchResultsBox = $('.live-search-results');
-  let timeoutId = 0;
-  $('.main-header-search-bar').keydown(function (e) {
-    // Check if value input stays the same or not when pressing a key.
-    $('.main-header-search-bar').on('input', function (e) {
-      // If input field is empty
-      if (!$('.main-header-search-bar').val()) {
-        searchResultsBox.html('');
+  // // Begin of live search script
+  // let searchResultsBox = $('.live-search-results');
+  // let timeoutId = 0;
+  // $('.main-header-search-bar').keydown(function (e) {
+  //   // Check if value input stays the same or not when pressing a key.
+  //   $('.main-header-search-bar').on('input', function (e) {
+  //     // If input field is empty
+  //     if (!$('.main-header-search-bar').val()) {
+  //       searchResultsBox.html('');
 
-        $('.live-search-results-container').hide();
-      } else {
-        // If input field is not empty
-        $('.live-search-results-container').show();
+  //       $('.live-search-results-container').hide();
+  //     } else {
+  //       // If input field is not empty
+  //       $('.live-search-results-container').show();
 
-        clearTimeout(timeoutId);
+  //       clearTimeout(timeoutId);
 
-        if (!$('.loader-cms').is(':visible')) {
-          searchResultsBox.html(
-            '<div style="margin: 15px auto;" class="loader-cms"></div>'
-          );
-        }
+  //       if (!$('.loader-cms').is(':visible')) {
+  //         searchResultsBox.html(
+  //           '<div style="margin: 15px auto;" class="loader-cms"></div>'
+  //         );
+  //       }
 
-        // Only get and show data after about 300 miliseconds
-        timeoutId = setTimeout(() => {
-          getSearchResults();
-        }, 300);
+  //       // Only get and show data after about 300 miliseconds
+  //       timeoutId = setTimeout(() => {
+  //         getSearchResults();
+  //       }, 300);
 
-        // Get the search results
-        function getSearchResults() {
-          $.when(
-            // $.getJSON(cmsstarterData.root_url + "/wp-json/wp/v2/telefoon_reparaties?search=" + $('.main-header-search-bar').val()),
-            $.getJSON(
-              cmsstarterData.root_url +
-                '/wp-json/wp/v2/posts?search=' +
-                $('.main-header-search-bar').val()
-            ),
-            $.getJSON(
-              cmsstarterData.root_url +
-                '/wp-json/wp/v2/pages?search=' +
-                $('.main-header-search-bar').val()
-            )
-          )
-            // .then((telreps) => {
-            .then(
-              (posts, pages) => {
-                // let combinedResults = posts[0].concat(pages[0], telreps[0]);
-                let combinedResults = posts[0].concat(pages[0]);
+  //       // Get the search results
+  //       function getSearchResults() {
+  //         $.when(
+  //           // $.getJSON(cmsstarterData.root_url + "/wp-json/wp/v2/telefoon_reparaties?search=" + $('.main-header-search-bar').val()),
+  //           $.getJSON(
+  //             cmsstarterData.root_url +
+  //               '/wp-json/wp/v2/posts?search=' +
+  //               $('.main-header-search-bar').val()
+  //           ),
+  //           $.getJSON(
+  //             cmsstarterData.root_url +
+  //               '/wp-json/wp/v2/pages?search=' +
+  //               $('.main-header-search-bar').val()
+  //           )
+  //         )
+  //           // .then((telreps) => {
+  //           .then(
+  //             (posts, pages) => {
+  //               // let combinedResults = posts[0].concat(pages[0], telreps[0]);
+  //               let combinedResults = posts[0].concat(pages[0]);
 
-                // let combinedResults = telreps[0];
+  //               // let combinedResults = telreps[0];
 
-                if (combinedResults.length) {
-                  $('.live-search-results').html(`
-                ${combinedResults
-                  .map(
-                    (post) =>
-                      `<a style="text-align: center; padding: 8px 0px;display: block;border-bottom: 1px solid #e9e9e9;" href="${post.link}">${post.title.rendered}</a>`
-                  )
-                  .join('')}            
-              `);
-                } else {
-                  searchResultsBox.html(
-                    '<p style="text-align: center;">Sorry, niets gevonden.</p>'
-                  );
-                }
-              },
-              (error) => {
-                searchResultsBox.html(
-                  '<p style="text-align: center;">Er is een fout opgetreden.</p>'
-                );
-              }
-            );
-        }
-      }
-    });
-  });
+  //               if (combinedResults.length) {
+  //                 $('.live-search-results').html(`
+  //               ${combinedResults
+  //                 .map(
+  //                   (post) =>
+  //                     `<a style="text-align: center; padding: 8px 0px;display: block;border-bottom: 1px solid #e9e9e9;" href="${post.link}">${post.title.rendered}</a>`
+  //                 )
+  //                 .join('')}            
+  //             `);
+  //               } else {
+  //                 searchResultsBox.html(
+  //                   '<p style="text-align: center;">Sorry, niets gevonden.</p>'
+  //                 );
+  //               }
+  //             },
+  //             (error) => {
+  //               searchResultsBox.html(
+  //                 '<p style="text-align: center;">Er is een fout opgetreden.</p>'
+  //               );
+  //             }
+  //           );
+  //       }
+  //     }
+  //   });
+  // });
 
-  // Prevent normal form submit behaviour
-  $('.search-form-header').submit(function (e) {
-    e.preventDefault();
-  });
+  // // Prevent normal form submit behaviour
+  // $('.search-form-header').submit(function (e) {
+  //   e.preventDefault();
+  // });
   // End of live search script
 
   // ===============================================================================================

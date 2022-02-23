@@ -381,6 +381,18 @@ function cmswebdesign_add_breadcrumb_to_account_dashboard() {
 }
 add_action('woocommerce_before_account_navigation', 'cmswebdesign_add_breadcrumb_to_account_dashboard', 20);
 
+/*
+* #.# Woocommerce pagination arrows
+*
+*/
+add_filter( 'woocommerce_pagination_args', 	'cmswebdesign_woo_pagination' );
+function cmswebdesign_woo_pagination( $args ) {
+
+	$args['prev_text'] = __('Vorige pagina', 'cmswebdesignstarter');
+	$args['next_text'] = __('Volgende pagina', 'cmswebdesignstarter');
+
+	return $args;
+}
 
 /**
  * #.# Filter the except length to 20 words.

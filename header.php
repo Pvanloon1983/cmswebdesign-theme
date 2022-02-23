@@ -78,15 +78,17 @@
 
 
           <div class="search-bar-container">
-            <form class="search-form-header" action="/" method="get">
-              <input autocomplete="off" class="search-bar main-header-search-bar" type="search" name="s" id="search" value="<?php the_search_query(); ?>" placeholder="Zoeken...">
-              <!-- <button class="search-submit-button" type="submit"><i class="fas fa-search"></i></button> -->
+            <!-- <form class="search-form-header" action="/" method="get">
+              <input autocomplete="off" class="search-bar main-header-search-bar" type="search" name="s" id="search" value="<? //php the_search_query(); ?>" placeholder="Zoeken...">
+              <button class="search-submit-button" type="submit"><i class="fas fa-search"></i></button>
             </form> 
 
             <div class="live-search-results-container">
               <div class="live-search-results">
               </div>
-            </div>
+            </div> -->
+
+            <?php get_search_form(); ?>
           </div>
           
           <div class="menu-toggle-container">
