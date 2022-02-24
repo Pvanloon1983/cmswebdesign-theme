@@ -247,6 +247,7 @@ select:hover {
 .woocommerce
 .products.columns-3 {
   margin-bottom: 0px;
+  width: 104.5%;
 }
 
 .woocommerce
@@ -752,6 +753,26 @@ address {
   text-decoration: none;
 }
 
+.woocommerce
+.woocommerce-MyAccount-content
+label {
+  font-weight: 600;
+}
+
+.woocommerce
+.select2-container 
+.select2-selection--single {
+  height: 42px;
+  padding: 6px 0 7px 0;
+  border: 1px solid #e9e9e9;
+}
+
+.woocommerce
+.select2-container 
+.select2-selection__arrow {
+  padding-top: 40px;
+}
+
 /*
 * #.# Woocommerce account inlog/register page
 *
@@ -828,6 +849,16 @@ form.login {
   border: 1px solid #d3d3d3;
 }
 
+/*
+* #.# Terug naar de winkel
+*
+*/
+.terug-naar-de-winkel {
+  margin-bottom: 12px;
+  font-size: .92em;
+  color: #767676;
+}
+
 @media only screen and (max-width: 1024px) {
 
   .woocommerce-shop
@@ -874,7 +905,7 @@ form.login {
 
   .shop-page-filter-drawer {
     position: fixed;
-    width: 250px;
+    width: 300px;
     height: 100vh;
     background-color: #fff;
     left: 0;
@@ -966,6 +997,16 @@ form.login {
     margin-bottom: 15px !important;
     display: block;
     padding-left: 0;
+    }
+
+    /*
+    * #.# Shop page
+    *
+    */
+    .woocommerce
+    .products.columns-3 {
+      margin-bottom: 0px;
+      width: 100%;
     }
 
 }

@@ -138,7 +138,7 @@ jQuery(document).ready(function ($) {
    */
 
   $('.menu-toggle-container .fa-bars').click(function () {
-    $('.mobile-menu-side-menu').toggle('slide', { direction: 'right' }, 300);
+    $('.mobile-menu-side-menu').toggle('slide', { direction: 'right' }, 250);
   });
 
     /*
@@ -220,7 +220,7 @@ jQuery(document).ready(function ($) {
   /* Close mobile menu */
   $('.mobile-menu-side-menu .mobile-menu-close-button .fa-times').click(
     function () {
-      $('.mobile-menu-side-menu').toggle('slide', { direction: 'right' }, 300);
+      $('.mobile-menu-side-menu').toggle('slide', { direction: 'right' }, 250);
     }
   );
 

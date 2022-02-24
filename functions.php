@@ -83,6 +83,12 @@ function the_breadcrumb() {
   }
 }
 
+/*
+* #.# Change breadcrumb woocommerce for category and tag page
+*
+*/
+
+
 /**
  * #.# Theme supports
  * 
@@ -270,8 +276,12 @@ function cmswebdesign_add_sidebar_button() {
 
   echo '<button class="sidebar-drawer-button"><i class="fa-solid fa-sliders"></i> Filter</button>';
 
+  if ( is_product_category() || is_product_tag() || is_product_taxonomy() ) {
+    echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> Terug naar de volledige winkel</a></div>';
+  }
+
 }
-add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_sidebar_button', 1);
+add_action('woocommerce_before_shop_loop', 'cmswebdesign_add_sidebar_button', 5);
 
 /*
 * #.# Category and Tag page
@@ -282,13 +292,13 @@ function cmswebdesign_add_page_title_cat_and_tag() {
 
   if (is_product_category()) {
   ?>
-    <h1 class="page-title container"><?php _e( 'Categorie: ', 'my-theme' ) . woocommerce_page_title(); ?></h1>
+    <h1 class="page-title container"><?php __( 'Categorie: ', 'cmswebdesignstarter' ) . woocommerce_page_title(); ?></h1>
   <?php
   }
 
   if (is_tag()) {
     ?>
-      <h1 class="page-title container"><?php _e( 'Tag: ', 'my-theme' ) . woocommerce_page_title(); ?></h1>
+      <h1 class="page-title container"><?php __( 'Tag: ', 'cmswebdesignstarter' ) . woocommerce_page_title(); ?></h1>
     <?php
     }
 
@@ -318,6 +328,8 @@ add_action( 'woocommerce_no_products_found', 'fwp_wrapper_close', 15 );
 function cmswebdesign_add_breadcrumb_above_title() {
 
   woocommerce_breadcrumb();
+
+  echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> Terug naar de volledige winkel</a></div>';
 
 }
 add_action('woocommerce_single_product_summary', 'cmswebdesign_add_breadcrumb_above_title', 1);
