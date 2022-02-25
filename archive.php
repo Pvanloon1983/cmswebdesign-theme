@@ -57,7 +57,7 @@
 
 
       <?php else : ?>
-      <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
+      <p><?php __( 'Sorry, no posts matched your criteria.', 'cmswebdesignstarter' ); ?></p>
       <?php endif; ?> 
        
     </div>

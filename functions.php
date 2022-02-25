@@ -343,7 +343,7 @@ add_action('woocommerce_single_product_summary', 'cmswebdesign_add_breadcrumb_ab
 function cmswebdesign_add_heading_above_order() {
   ?>
 
-  <h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
+  <h3 id="order_review_heading_custom"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
 
   <?php
 }
@@ -370,6 +370,21 @@ function cmswebdesign_woocommerce_before_checkout_form() {
 
 }
 add_action('woocommerce_before_checkout_form', 'cmswebdesign_woocommerce_before_checkout_form', 1);
+
+function cmswebdesign_woocommerce_checkout_before_customer_details () {
+
+  echo "<div class='customer-details-flex-container'>";
+
+}
+add_action('woocommerce_checkout_before_customer_details', 'cmswebdesign_woocommerce_checkout_before_customer_details', 1);
+
+function cmswebdesign_woocommerce_checkout_after_order_review() {
+
+  echo "</div>";
+
+}
+add_action('woocommerce_checkout_after_order_review', 'cmswebdesign_woocommerce_checkout_after_order_review', 1);
+
 
 /*
 * #.# Thank you page
