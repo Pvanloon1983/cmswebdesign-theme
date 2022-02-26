@@ -28,7 +28,16 @@ function add_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
 /*
-* #.# Breadcrumbs on pages other than the woocommcerce pages
+* #.# Load theme translations
+*
+*/
+function cmswebdesign_load_theme_textdomain() {
+  load_theme_textdomain( 'cmswebdesignstarter', get_template_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'cmswebdesign_load_theme_textdomain' );
+
+/*
+* #.# Breadcrumbs on pages other than the woocommerce pages
 *
 */
 function the_breadcrumb() {
@@ -131,6 +140,17 @@ add_action( 'after_setup_theme', 'cmswebdesign_add_woocommerce_support' );
 *
 */
 
+/**
+ * Change the woocommerce breadcrumb separator
+ */
+add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_delimiter' );
+function wcc_change_breadcrumb_delimiter( $defaults ) {
+	// Change the breadcrumb delimeter from '/' to '>'
+	$defaults['delimiter'] = ' &#187; ';
+	return $defaults;
+}
+
+
 // Remove default breadcrumb
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
 
@@ -155,26 +175,15 @@ function cmswebdesign_add_custom_containers_shop_before() {
   </div>
 
   <div class="main-content">
-  <div class="page-title-bread-crumb-container">
-		<?php woocommerce_breadcrumb(); ?>
-		<!-- <h1 class="page-title container"><?php // woocommerce_page_title(); ?></h1> -->
-	</div>
-	<div class="container">
+    <div class="page-title-bread-crumb-container">
+      <?php woocommerce_breadcrumb(); ?>
+      <!-- <h1 class="page-title container"><?php // woocommerce_page_title(); ?></h1> -->
+    </div>
+    <div class="container">
 
   <?php 
 }
 add_action('woocommerce_before_main_content', 'cmswebdesign_add_custom_containers_shop_before', 1 );
-
-
-/**
- * Change the breadcrumb separator
- */
-add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_delimiter' );
-function wcc_change_breadcrumb_delimiter( $defaults ) {
-	// Change the breadcrumb delimeter from '/' to '>'
-	$defaults['delimiter'] = ' &#187; ';
-	return $defaults;
-}
 
 
 function cmswebdesign_add_custom_containers_shop_after() {
@@ -229,7 +238,7 @@ function cmswebdesign_woocommerce_header_add_to_cart_fragment( $fragments ) {
 add_filter( 'woocommerce_add_to_cart_fragments', 'cmswebdesign_woocommerce_header_add_to_cart_fragment' );
 
 /**
- * #.# Show product category above product title
+ * #.# Show product category above product title for prouct cards on shop page
  * 
  */
 
@@ -277,7 +286,7 @@ function cmswebdesign_add_sidebar_button() {
   echo '<button class="sidebar-drawer-button"><i class="fa-solid fa-sliders"></i> Filter</button>';
 
   if ( is_product_category() || is_product_tag() || is_product_taxonomy() ) {
-    echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> Terug naar de volledige winkel</a></div>';
+    echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de volledige winkel', 'cmswebdesignstarter') . '</a></div>';
   }
 
 }
@@ -329,7 +338,7 @@ function cmswebdesign_add_breadcrumb_above_title() {
 
   woocommerce_breadcrumb();
 
-  echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> Terug naar de volledige winkel</a></div>';
+  echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de volledige winkel', 'cmswebdesignstarter') . '</a></div>';
 
 }
 add_action('woocommerce_single_product_summary', 'cmswebdesign_add_breadcrumb_above_title', 1);

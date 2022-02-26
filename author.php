@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/**
+ * The template for displaying the author archive page
+ *
+ * @package cmswebdesignstarter
+ */
+?>
 
 <div class="main-content index-content">
   <div class="container">  

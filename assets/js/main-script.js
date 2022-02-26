@@ -89,17 +89,9 @@ jQuery(document).ready(function ($) {
    *
    */
 
-  $(
-    '.navbar-main .menu-main-menu-container > ul > .menu-item-has-children > a'
-  ).after(
-    '<button class="menu-drop-down-icon-down"><i class="fas fa-chevron-down"></i></button>'
-  );
+  $('.navbar-main .menu-main-menu-container > ul > .menu-item-has-children > a').after('<button class="menu-drop-down-icon-down"><i class="fas fa-chevron-down"></i></button>');
 
-  $(
-    '.navbar-main .menu-main-menu-container > ul > li > ul > .menu-item-has-children > a'
-  ).after(
-    '<button class="menu-drop-down-icon-right"><i class="fas fa-chevron-right"></i></button>'
-  );
+  $('.navbar-main .menu-main-menu-container > ul > li > ul > .menu-item-has-children > a').after('<button class="menu-drop-down-icon-right"><i class="fas fa-chevron-right"></i></button>');
 
   /*
    * #.# Search form toggle

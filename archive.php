@@ -1,13 +1,17 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/**
+ * The template for displaying archive pages
+ *
+ * @package cmswebdesignstarter
+ */
+?>
 
 <div class="main-content index-content">
   <div class="container">  
 
-
     <div class="page-title-container">
       <h1 class="page-title"><?php the_archive_title(); ?></h1>    
     </div>
-
    
   <div class="blogs-sidebar-container"> 
 
@@ -57,7 +61,7 @@
 
 
       <?php else : ?>
-      <p><?php __( 'Sorry, no posts matched your criteria.', 'cmswebdesignstarter' ); ?></p>
+      <p><?php __( 'Sorry, er kwamen geen berichten overeen met je criteria.', 'cmswebdesignstarter' ); ?></p>
       <?php endif; ?> 
        
     </div>

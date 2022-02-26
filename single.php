@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/**
+ * The Template for displaying all single posts.
+ *
+ * @package cmswebdesignstarter
+ */
+?>
 
 <div class="main-content index-content">
   <div class="container">  

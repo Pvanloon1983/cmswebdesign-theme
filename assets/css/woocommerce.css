@@ -1025,6 +1025,20 @@ form.login {
       width: 100%;
     }
 
+    /*
+    * #.# Check out page
+    *
+    */
+    .woocommerce
+    .customer-details-flex-container {
+      display: block;
+    }
+
+    .woocommerce
+    #order_review {
+      margin: 3px;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
