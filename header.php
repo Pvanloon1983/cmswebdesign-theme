@@ -21,8 +21,12 @@
 
         <?php if( current_user_can('administrator')) {  ?>
             <style>
-              body.logged-in > header {
+              body.logged-in > .top-bar {
                 margin-top: 32px;
+              }
+
+              body.logged-in > header {
+                margin-top: 92px;
               }
             </style>
         <?php } ?>

@@ -179,6 +179,20 @@ textarea {
   display: none;
 }
 
+.search-results
+.terug-naar-homepage-search-results {
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.search-no-results
+.terug-naar-homepage-search-results {
+  text-align: center;
+  margin-top: -5px;
+  margin-bottom: 30px;
+}
+
 /**
 * #.# Top bar, Header section, navbar styles
 *
@@ -188,7 +202,6 @@ textarea {
 /* Top bar*/
 .top-bar {
   height: 60px;
-  border-bottom: 1px solid #fafafa;
   position: fixed;
   width: 100%;
   top: 0;
@@ -255,6 +268,7 @@ textarea {
   height: 60px;
   background-color: #fff;
   border-bottom: 1px solid #fafafa;
+  border-top: 1px solid #fafafa;
   width: 100%;
   margin-top: 60px;
 }

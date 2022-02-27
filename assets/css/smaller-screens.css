@@ -219,9 +219,12 @@
 
 @media only screen and (max-width: 768px) {
 
+  body.logged-in > .top-bar {
+    margin-top: 46px !important;
+  }
 
-  body.logged-in > header {  
-    margin-top: 46px;  
+  body.logged-in > header {
+    margin-top: 106px !important;
   }
 
     /*
