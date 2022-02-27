@@ -51,7 +51,8 @@
         ?>
       </div>
     <div class="top-bar-search-bar">
-        <?php get_search_form(); ?>
+        <?php // get_search_form(); // Standard WP search form ?> 
+        <?php get_product_search_form(); ?>
     </div>
     <div class="top-bar-cart-container">
         <div class="cart-heading">

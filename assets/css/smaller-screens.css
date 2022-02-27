@@ -332,6 +332,20 @@
     margin-top: 15px;
   }
 
+  /*
+  * #.# Result page styling
+  *
+  */
+  .page-title-search-result-page {
+    margin-bottom: 0px !important;
+  }
+  
+  .page-title-container
+  .posts-results-counter {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
   
 }
 
@@ -398,11 +412,10 @@
     padding: 0px 0px 20px 0px;
   }
 
-  .index-content 
-  .blogs-sidebar-container
+  .search-results
   .blog-article {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   .index-content 
@@ -432,6 +445,12 @@
   .blog-article {
     padding: 10px 10px 20px 10px !important;
   }
+
+  .search-results
+  .blog-article {
+    padding: 10px 10px 20px 10px !important;
+  }
+
   
 }
   

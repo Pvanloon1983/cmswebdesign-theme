@@ -154,6 +154,30 @@ textarea {
   color: #fff;
 }
 
+/*
+* #.# Search results page for posts different than shop
+*
+*/
+.page-title-search-result-page {
+  margin-bottom: 0px !important;
+}
+
+.page-title-container
+.posts-results-counter {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.search-no-results
+.main-content {
+  padding-top: 0;
+}
+
+.search-no-results
+.index-content 
+.blog-articles-container  {
+  display: none;
+}
 
 /**
 * #.# Top bar, Header section, navbar styles
