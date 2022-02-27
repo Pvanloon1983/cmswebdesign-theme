@@ -98,7 +98,16 @@ textarea {
 }
 
 .main-content {
-  padding-top: 80px;
+  padding-top: 120px !important;
+}
+
+.main-content {
+  margin-top: 30px;
+}
+
+.page
+.main-content {
+  margin-top: 0px;
 }
 
 .main-content a:hover {
@@ -145,20 +154,85 @@ textarea {
   color: #fff;
 }
 
+
 /**
-* #.# Header section, navbar styles
+* #.# Top bar, Header section, navbar styles
 *
 * 
 */
+
+/* Top bar*/
+.top-bar {
+  height: 60px;
+  border-bottom: 1px solid #fafafa;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  z-index: 195;
+}
+
+.top-bar
+.container {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.top-bar
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100px;
+}
+
+.top-bar
+.top-bar-search-bar {
+  width: 100%;
+  max-width: 400px;
+}
+
+.top-bar
+.top-bar-search-bar
+.search-bar {
+  padding: 8px 8px;
+  font-family: var(--global-font);
+  font-size: var(--global-font-size-menu);
+  border: 1px solid #e9e9e9;
+  border-right: none;
+  font-weight: var(--global-font-weight-menu);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  width: 100%;
+}
+
+.top-bar
+.top-bar-search-bar
+.search-submit-button {
+  border: none;
+  background: #a9a9a9;
+  cursor: pointer;
+  padding: 0px 10px 0px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .header-section {
   position: relative;
   z-index: 100;
   position: fixed;
   top: 0;
-  height: 80px;
+  height: 60px;
   background-color: #fff;
   border-bottom: 1px solid #fafafa;
   width: 100%;
+  margin-top: 60px;
 }
 
 .header-section 
@@ -168,7 +242,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  height: 80px;
+  height: 60px;
 }
 
 .header-section 
@@ -295,7 +369,7 @@ textarea {
   align-items: center;
   opacity: 0;
   width: 175px;
-  top: 100%;
+  top: 87%;
   left: 5px;
   position: absolute;
   margin-top: 10px;
@@ -406,7 +480,7 @@ textarea {
 
 .search-bar-container {
   position: absolute;
-  top: 100%;
+  top: 86%;
   right: 0;
   /* margin-left: 476px; */
   margin-top: 10px;
@@ -417,6 +491,7 @@ textarea {
   opacity: 0;
   transition: all 0.3s ease;
   width: 308px;
+  border-radius: 5px;
 }
 
 .search-bar-container 

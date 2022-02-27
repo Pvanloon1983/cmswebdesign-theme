@@ -36,6 +36,32 @@
     do_action( 'wp_body_open' );
   }
 ?>
+<div class="top-bar">
+  <div class="container">
+    <div class="logo-container">
+        <?php 
+          $custom_logo_id = get_theme_mod( 'custom_logo' );
+          $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+          
+          if ( has_custom_logo() ) {
+              echo '<a href="' . get_bloginfo( 'url' ) . '"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
+          } else {
+              echo '<p><a href="' . get_bloginfo( 'url' ) . '">Logo</a></p>';
+          }
+        ?>
+      </div>
+    <div class="top-bar-search-bar">
+        <?php get_search_form(); ?>
+    </div>
+    <div class="top-bar-cart-container">
+        <div class="cart-heading">
+        <a href="<?php echo wc_get_cart_url(); ?>"><i class="fas fa-shopping-cart"></i>
+        <!-- <span class="items"><?php // echo WC()->cart->get_cart_contents_count(); ?></span></a> -->
+        <span class="items"><?php echo WC()->cart->get_cart_total(); ?></span></a>
+        </div>
+    </div>
+  </div>
+</div>
 <header class="header-section">
     <div class="container">
       <div class="logo-container">
