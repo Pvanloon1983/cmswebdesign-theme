@@ -209,7 +209,10 @@ jQuery(document).ready(function ($) {
     '<button class="menu-drop-down-icon-down-mobile"><i id="lvl2" class="fas fa-chevron-down"></i></button>'
   );
 
-  /* Close mobile menu */
+  /* 
+  * #.# Close mobile menu 
+  *
+  */
   $('.mobile-menu-side-menu .mobile-menu-close-button .fa-times').click(
     function () {
       $('.mobile-menu-side-menu').toggle('slide', { direction: 'right' }, 250);
@@ -277,8 +280,6 @@ jQuery(document).ready(function ($) {
       $(this).next('.menu-drop-down-icon-down-mobile').click();
     }
   });
-
-
 
 });
 

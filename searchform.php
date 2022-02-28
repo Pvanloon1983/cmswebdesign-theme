@@ -1,6 +1,6 @@
 <?php 
 /**
- * The template for displaying search forms in Generate
+ * The template for displaying search forms
  *
  * @package CMS Webdesign starter
  */

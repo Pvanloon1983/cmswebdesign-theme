@@ -11,13 +11,13 @@
 
 function add_theme_scripts() {
  
-  wp_enqueue_style( 'cmswebdesign-font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), time(), 'all');
-  wp_enqueue_style( 'cmswebdesign-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), time(), 'all');
-  wp_enqueue_style( 'cmswebdesign-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce.css', array(), time(), 'all');
-  wp_enqueue_style( 'cmswebdesign-tablet-style', get_template_directory_uri() . '/assets/css/smaller-screens.css', array(), time(), 'all');
-  wp_enqueue_style( 'cmswebdesign-spinner-style', get_template_directory_uri() . '/assets/css/spinner.css', array(), time(), 'all');
+  wp_enqueue_style( 'cmswebdesign-font-awesome', get_template_directory_uri() . '/assets/css/all.min.css', array(), '', 'all');
+  wp_enqueue_style( 'cmswebdesign-main-style', get_template_directory_uri() . '/assets/css/main.css', array(), '', 'all');
+  wp_enqueue_style( 'cmswebdesign-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce.css', array(), '', 'all');
+  wp_enqueue_style( 'cmswebdesign-tablet-style', get_template_directory_uri() . '/assets/css/smaller-screens.css', array(), '', 'all');
+  wp_enqueue_style( 'cmswebdesign-spinner-style', get_template_directory_uri() . '/assets/css/spinner.css', array(), '', 'all');
   
-  wp_enqueue_script( 'cmswebdesign-main-script', get_template_directory_uri() . '/assets/js/main-script.js', array ( 'jquery', 'jquery-effects-slide' ), time(), true);
+  wp_enqueue_script( 'cmswebdesign-main-script', get_template_directory_uri() . '/assets/js/main-script.js', array ( 'jquery', 'jquery-effects-slide' ), '', true);
 
   // This will output a script data in the html which can be used in other javascript scripts
   wp_localize_script('cmswebdesign-main-script', 'cmsstarterData', array(
@@ -92,12 +92,6 @@ function the_breadcrumb() {
   }
 }
 
-/*
-* #.# Change breadcrumb woocommerce for category and tag page
-*
-*/
-
-
 /**
  * #.# Theme supports
  * 
@@ -135,14 +129,12 @@ function cmswebdesign_add_woocommerce_support() {
 }
 add_action( 'after_setup_theme', 'cmswebdesign_add_woocommerce_support' );
 
-/*
-* #.# Customer Woocommerce styling
-*
-*/
 
 /**
  * Change the woocommerce breadcrumb separator
+ * 
  */
+
 add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_delimiter' );
 function wcc_change_breadcrumb_delimiter( $defaults ) {
 	// Change the breadcrumb delimeter from '/' to '>'
@@ -238,7 +230,7 @@ function cmswebdesign_woocommerce_header_add_to_cart_fragment( $fragments ) {
 add_filter( 'woocommerce_add_to_cart_fragments', 'cmswebdesign_woocommerce_header_add_to_cart_fragment' );
 
 /**
- * #.# Show product category above product title for prouct cards on shop page
+ * #.# Show product category above product title for product cards on shop page
  * 
  */
 
@@ -286,7 +278,7 @@ function cmswebdesign_add_sidebar_button() {
   echo '<button class="sidebar-drawer-button"><i class="fa-solid fa-sliders"></i> Filter</button>';
 
   if ( is_product_category() || is_product_tag() || is_product_taxonomy() ) {
-    echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de winkel', 'cmswebdesignstarter') . '</a></div>';
+    echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de volledige winkel', 'cmswebdesignstarter') . '</a></div>';
   }
 
 }
@@ -450,7 +442,7 @@ add_filter( 'excerpt_length', 'cmswebdesign_custom_excerpt_length', 999 );
 function cmswebdesign_excerpt_more( $more ) {
   return sprintf( '... <a href="%1$s" class="more-link">%2$s</a>',
   esc_url( get_permalink( get_the_ID() ) ),
-  sprintf( __( 'verder lezen &#187; %s', 'cmswebdesign' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+  sprintf( __( 'verder lezen &#187; %s', 'cmswebdesignstarter' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
   );
 }
 add_filter( 'excerpt_more', 'cmswebdesign_excerpt_more' );
