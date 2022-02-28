@@ -1,8 +1,8 @@
 <?php get_header(); 
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all single posts.
  *
- * @package cmswebdesignstarter
+ * @package CMS Webdesign starter
  */
 ?>
 

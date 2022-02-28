@@ -2,7 +2,7 @@
 /**
  * The template for displaying the author archive page
  *
- * @package cmswebdesignstarter
+ * @package CMS Webdesign starter
  */
 ?>
 

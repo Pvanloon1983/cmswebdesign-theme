@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/**
+ * The template for displaying the front page
+ *
+ * @package CMS Webdesign starter
+ */
+?>
 
 <div class="main-content">
   <div class="container">

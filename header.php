@@ -1,10 +1,6 @@
 <?php
 /**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section until the <div class="index-content"> section
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * The template for displaying the header.
  *
  * @package CMS Webdesign starter
  */

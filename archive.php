@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages
  *
- * @package cmswebdesignstarter
+ * @package CMS Webdesign starter
  */
 ?>
 

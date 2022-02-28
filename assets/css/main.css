@@ -1094,3 +1094,23 @@ img {
   margin: 0 !important;
   margin-bottom: 5px !important;
 }
+
+/*
+* #.# 404 Pagina
+*
+*/
+.error404
+.container {
+  text-align: center;
+}
+
+.error404
+.page-title {
+  margin-bottom: 0;
+}
+
+.error404
+.main-content {
+  margin-bottom: 40px;
+}
+

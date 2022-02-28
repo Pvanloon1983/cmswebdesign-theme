@@ -1,10 +1,9 @@
 <?php 
-
-/*
-* #.# This is the standard wordpress search form which
-*  will output search results on the search.php page
-*
-*/
+/**
+ * The template for displaying search forms in Generate
+ *
+ * @package CMS Webdesign starter
+ */
 
 global $wp_query;   
 $post_type = get_query_var('post_type');
