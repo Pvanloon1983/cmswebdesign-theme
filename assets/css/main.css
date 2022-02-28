@@ -987,7 +987,7 @@ aside ul li {
 
 .single-post 
 .blog-articles-container {
-  max-width: 818px;
+  // max-width: 818px;
   margin: 0 auto 0px auto;
   /* border: 1px solid #e9e9e9; */
 }
@@ -1060,11 +1060,10 @@ aside ul li {
 .single-post
 .related-blog-posts-container
 .realated-single-blog-post {
-  flex: 40%;
   padding: 20px;
   border: 1px solid #e9e9e9;
   border-radius: 5px;
-  max-width: 50%;
+  max-width: 40%;
 }
 
 .single-post
@@ -1119,3 +1118,21 @@ img {
   margin-bottom: 40px;
 }
 
+/*
+* #.# Comments pagina
+*
+*/
+.single-post
+#comments
+#reply-title {
+  font-size: 24px;
+}
+
+.single-post
+#comments
+#comment {
+  width: 100%;
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+  max-width: 500px;
+}

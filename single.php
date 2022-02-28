@@ -43,6 +43,8 @@
             <small class="postmetadata"><?php _e( 'Categorie:' ); ?> <?php the_category( ', ' ); ?></small>
           </div>
 
+          <?php comments_template('/comments.php'); ?>
+
           <!-- <hr class="related-blog-posts-hr"> -->
 
           <h2 class="related-blog-posts-main-heading">Bekijk ook</h2>
@@ -71,6 +73,8 @@
                 }
               ?>
               <?php the_excerpt(); ?>
+              <!-- <a href="<?php // the_permalink(); ?>"><button class="btn-lees-meer">Lees meer</button></a><br> -->
+              <small class="postmetadata"><?php _e( 'Categorie:' ); ?> <?php the_category( ', ' ); ?></small>
             </div>
             <?php }
             wp_reset_postdata(); ?>
@@ -95,7 +99,7 @@
 
       <?php else : ?>
       <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-      <?php endif; ?> 
+      <?php endif; ?>      
        
     </div>
 
