@@ -286,7 +286,7 @@ function cmswebdesign_add_sidebar_button() {
   echo '<button class="sidebar-drawer-button"><i class="fa-solid fa-sliders"></i> Filter</button>';
 
   if ( is_product_category() || is_product_tag() || is_product_taxonomy() ) {
-    echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de volledige winkel', 'cmswebdesignstarter') . '</a></div>';
+    echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de winkel', 'cmswebdesignstarter') . '</a></div>';
   }
 
 }
@@ -338,7 +338,7 @@ function cmswebdesign_add_breadcrumb_above_title() {
 
   woocommerce_breadcrumb();
 
-  echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de volledige winkel', 'cmswebdesignstarter') . '</a></div>';
+  echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de winkel', 'cmswebdesignstarter') . '</a></div>';
 
 }
 add_action('woocommerce_single_product_summary', 'cmswebdesign_add_breadcrumb_above_title', 1);
@@ -364,7 +364,8 @@ add_action('woocommerce_checkout_order_review', 'cmswebdesign_add_heading_above_
 */
 function cmswebdesign_add_breadcrumb() {
 
-  woocommerce_breadcrumb();
+  // woocommerce_breadcrumb();
+  echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de winkel', 'cmswebdesignstarter') . '</a></div>';
 
 }
 add_action('woocommerce_before_cart', 'cmswebdesign_add_breadcrumb');
@@ -375,7 +376,8 @@ add_action('woocommerce_before_cart', 'cmswebdesign_add_breadcrumb');
 */
 function cmswebdesign_woocommerce_before_checkout_form() {
 
-  woocommerce_breadcrumb();
+  // woocommerce_breadcrumb();
+  echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de winkel', 'cmswebdesignstarter') . '</a></div>';
 
 }
 add_action('woocommerce_before_checkout_form', 'cmswebdesign_woocommerce_before_checkout_form', 1);
