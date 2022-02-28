@@ -741,8 +741,8 @@ a.remove:before {
 
 .woocommerce-account
 .main-content {
-  padding-top: 100px;
-  padding-bottom: 10px;
+  padding-top: 150px !important;
+  padding-bottom: 20px;
 }
 
 .woocommerce-account
