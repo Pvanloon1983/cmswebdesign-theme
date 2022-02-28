@@ -12,6 +12,8 @@
     <div class="page-title-container">
       <h1 class="page-title"><?php the_archive_title(); ?></h1>    
     </div>
+
+    <div class="breadcrumb"><?php the_breadcrumb(); ?></div>
    
   <div class="blogs-sidebar-container"> 
 
