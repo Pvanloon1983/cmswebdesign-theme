@@ -401,7 +401,7 @@ add_action('woocommerce_checkout_after_order_review', 'cmswebdesign_woocommerce_
 */
 function cmswebdesign_woocommerce_before_thankyou() {
 
-  // woocommerce_breadcrumb();
+  echo '<div class="terug-naar-de-winkel"><a href="/winkel"><i class="fa-solid fa-circle-chevron-left"></i> ' . __('Terug naar de winkel', 'cmswebdesignstarter') . '</a></div>';
 
 }
 add_action('woocommerce_before_thankyou', 'cmswebdesign_woocommerce_before_thankyou', 1 );
