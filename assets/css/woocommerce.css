@@ -112,7 +112,7 @@ button {
 */
 .page-title-bread-crumb-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   padding: 0 15px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -286,7 +286,7 @@ select:hover {
 .woocommerce
 .products.columns-3 {
   margin-bottom: 0px;
-  width: 104.5%;
+  width: 100%;
 }
 
 .woocommerce
@@ -411,7 +411,7 @@ li.product{
   border: solid 1px #e9e9e9;
   padding: 20px;
   border-radius: 5px;
-  margin-right: 15px;
+  // margin-right: 15px;
   margin-bottom: 20px !important;
 }
 

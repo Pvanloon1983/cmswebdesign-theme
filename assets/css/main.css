@@ -88,7 +88,7 @@ textarea {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -327,6 +327,7 @@ textarea {
 .button-container {
   margin-left: 15px;
   display: flex;
+  align-items: center;
 }
 
 .header-section 
@@ -336,6 +337,8 @@ textarea {
   font-weight: var(--global-font-weight-menu);
   font-size: var(--global-font-size-menu);
   cursor: pointer;
+  height: 40px;
+  border-radius: 5px;
 }
 
 .header-section 
@@ -372,7 +375,7 @@ textarea {
 .menu-main-menu-container ul {
   list-style: none;
   padding: 0;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   margin: 0;
@@ -383,7 +386,7 @@ textarea {
 .menu-main-menu-container > ul > li {
   float: left;
   position: relative;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
 }
@@ -394,7 +397,7 @@ textarea {
   padding: 5px 15px;
   display: block;
   color: var(--text-color);
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
 }
@@ -407,7 +410,7 @@ textarea {
   align-items: center;
   opacity: 0;
   width: 175px;
-  top: 87%;
+  top: 97%;
   left: 5px;
   position: absolute;
   margin-top: 10px;
@@ -518,7 +521,7 @@ textarea {
 
 .search-bar-container {
   position: absolute;
-  top: 86%;
+  top: 97%;
   right: 0;
   /* margin-left: 476px; */
   margin-top: 10px;

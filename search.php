@@ -5,6 +5,9 @@
  * @package cmswebdesignstarter
  */
 
+  global $wp_query;
+  $total_results = $wp_query->found_posts;
+
 ?>
 
 <div class="main-content index-content">
@@ -17,10 +20,10 @@
           <p class="posts-results-counter">Er zijn geen resultaten gevonden.</p> <br>
           <p class="terug-naar-homepage-search-results"><a href="<?php bloginfo( 'url' ); ?>"><i class="fa-solid fa-circle-chevron-left"></i> <?php echo __('Home pagina', 'cmswebdesignstarter'); ?></a></p>
         <?php elseif ($total_results == 1) : ?>
-          <p class="posts-results-counter">Er is <?php echo $total_results; ?> resultaat gevonden.</p>
+          <p class="posts-results-counter">Er is <?php echo $total_results; ?> resultaat gevonden.</p> <br>
           <p class="terug-naar-homepage-search-results"><a href="<?php bloginfo( 'url' ); ?>"><i class="fa-solid fa-circle-chevron-left"></i> <?php echo __('Home pagina', 'cmswebdesignstarter'); ?></a></p>
         <?php elseif ($total_results > 1) : ?>
-          <p class="posts-results-counter">Er zijn <?php echo $total_results; ?> resultaat gevonden.</p>
+          <p class="posts-results-counter">Er zijn <?php echo $total_results; ?> resultaat gevonden.</p> <br>
           <p class="terug-naar-homepage-search-results"><a href="<?php bloginfo( 'url' ); ?>"><i class="fa-solid fa-circle-chevron-left"></i> <?php echo __('Home pagina', 'cmswebdesignstarter'); ?></a></p>
         <?php endif; ?>
 
