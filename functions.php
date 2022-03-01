@@ -234,6 +234,28 @@ if ( class_exists( 'WooCommerce' ) ) {
   add_action( 'after_setup_theme', 'cmswebdesign_add_woocommerce_support' );
 
 
+  // To change add to cart text on single product page
+  add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_custom_single_add_to_cart_text' ); 
+  function woocommerce_custom_single_add_to_cart_text() {
+      echo '<i class="fa-solid fa-plus"></i>' . ' ' . '<i class="fa-solid fa-cart-shopping"></i>'; 
+  }
+
+  // To change add to cart text on product archives(Collection) page
+  add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );  
+  function woocommerce_custom_product_add_to_cart_text() {
+      return '';
+  }
+
+  /*
+  * #.# Remove related products section and put it beneath single product container
+  *
+  */
+  remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+  add_action('woocommerce_after_single_product', 'woocommerce_output_related_products', 50);
+
+
+
   /**
    * Change the woocommerce breadcrumb separator
    * 

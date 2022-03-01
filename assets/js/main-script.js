@@ -281,6 +281,13 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  /*
+  * #.# Add icon to add to cart button ajax shop page
+  *  
+  */
+  $('.add_to_cart_button').html('<i class="fa-solid fa-plus"></i> <i class="fa-solid fa-cart-shopping"></i>');
+
+
 });
 
 
