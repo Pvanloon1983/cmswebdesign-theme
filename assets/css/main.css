@@ -199,6 +199,24 @@ textarea {
 * 
 */
 
+/*
+* #.# Top bar underneath the header
+*
+*/
+// .top-bar {
+//   top: 60px !important;
+// }
+
+// .top-bar
+// .container {
+//   border-bottom: 1px solid #fafafa !important;
+// }
+
+// .header-section {
+//   top: -60px !important;
+// }
+
+
 /* Top bar*/
 .top-bar {
   height: 60px;

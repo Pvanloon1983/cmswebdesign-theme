@@ -40,7 +40,7 @@
 
 <?php
 if ( class_exists( 'WooCommerce' ) ) { ?>
-  
+
   <div class="top-bar">
   <div class="container">
     <div class="logo-container">
