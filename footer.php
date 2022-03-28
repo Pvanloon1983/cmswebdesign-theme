@@ -12,27 +12,34 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-widgets">
-      <div class="widget-column-1">
-        <?php
-        if ( is_active_sidebar( 'footer-widget-one' ) ) {
-          dynamic_sidebar( 'footer-widget-one' );
-        }
-        if ( is_active_sidebar( 'footer-widget-two' ) ) {
-          dynamic_sidebar( 'footer-widget-two' );
-        }
-        ?>
-      </div>
-
-      <div class="widget-column-2">
-      <?php
-        if ( is_active_sidebar( 'footer-widget-three' ) ) {
-          dynamic_sidebar( 'footer-widget-three' );
-        }
-        if ( is_active_sidebar( 'footer-widget-four' ) ) {
-          dynamic_sidebar( 'footer-widget-four' );
-        }
-      ?>
-      </div>
+        <div class="box">
+          <?php 
+            if ( is_active_sidebar( 'footer-widget-one' ) ) {
+              dynamic_sidebar( 'footer-widget-one' );
+            }
+          ?>
+        </div>
+        <div class="box">
+          <?php
+          if ( is_active_sidebar( 'footer-widget-two' ) ) {
+            dynamic_sidebar( 'footer-widget-two' );
+          }
+          ?>
+        </div>
+        <div class="box">
+          <?php 
+          if ( is_active_sidebar( 'footer-widget-three' ) ) {
+            dynamic_sidebar( 'footer-widget-three' );
+          }
+          ?>
+        </div>
+        <div class="box">
+          <?php
+            if ( is_active_sidebar( 'footer-widget-four' ) ) {
+              dynamic_sidebar( 'footer-widget-four' );
+            }
+          ?>
+        </div>
   </div>
 </footer>
 <div class="copyright">

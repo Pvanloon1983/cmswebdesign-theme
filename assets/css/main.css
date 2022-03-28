@@ -641,49 +641,10 @@ textarea {
 .footer 
 .footer-widgets {
   display: flex;
-  align-items: center;
+  justify-content: center;
   justify-content: space-between;
   padding-top: 20px;
-}
-
-.footer 
-.widget-column-1 {
-  display: flex;
-}
-
-.footer 
-.widget-column-2 {
-  display: flex;
-}
-
-/* Begin footer Widget margin styling */
-
-.footer 
-.widget-column-1 
-.widget:nth-of-type(1) {
-  margin-left: 0;
-  margin-right: 10;
-}
-
-.footer 
-.widget-column-1 
-.widget:nth-of-type(2) {
-  margin-left: 10;
-  margin-right: 10;
-}
-
-.footer 
-.widget-column-2 
-.widget:nth-of-type(1) {
-  margin-left: 10;
-  margin-right: 10;
-}
-
-.footer 
-.widget-column-2 
-.widget:nth-of-type(2) {
-  margin-left: 10;
-  margin-right: 0;
+  flex-wrap: wrap;
 }
 
 /* End footer widget margin styling */
