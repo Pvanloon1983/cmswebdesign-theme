@@ -518,14 +518,17 @@ textarea {
   border: none;
   margin-left: -10px;
   color: var(--text-color);
+  height: 80px;
+  cursor: pointer;
 }
 
 .menu-drop-down-icon-right {
   font-size: 10px;
   background-color: transparent;
   border: none;
-  margin-right: 10px;
+  padding-right: 15px;
   color: var(--text-color);
+  cursor: pointer;
 }
 
 .mobile-menu-container {
