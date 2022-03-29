@@ -11,35 +11,24 @@
 ?>
 <footer class="footer">
   <div class="container">
-    <div class="footer-widgets">
-        <div class="box">
-          <?php 
-            if ( is_active_sidebar( 'footer-widget-one' ) ) {
-              dynamic_sidebar( 'footer-widget-one' );
-            }
-          ?>
-        </div>
-        <div class="box">
-          <?php
-          if ( is_active_sidebar( 'footer-widget-two' ) ) {
-            dynamic_sidebar( 'footer-widget-two' );
-          }
-          ?>
-        </div>
-        <div class="box">
-          <?php 
-          if ( is_active_sidebar( 'footer-widget-three' ) ) {
-            dynamic_sidebar( 'footer-widget-three' );
-          }
-          ?>
-        </div>
-        <div class="box">
-          <?php
-            if ( is_active_sidebar( 'footer-widget-four' ) ) {
-              dynamic_sidebar( 'footer-widget-four' );
-            }
-          ?>
-        </div>
+    <div class="footer-widgets"> 
+
+      <?php if ( is_active_sidebar( 'footer-widget-one' ) ) : ?>
+        <div class="box"><?php dynamic_sidebar( 'footer-widget-one' ); ?></div>
+      <?php endif; ?>
+
+      <?php if ( is_active_sidebar( 'footer-widget-two' ) ) : ?>
+        <div class="box"><?php dynamic_sidebar( 'footer-widget-two' ); ?></div>
+      <?php endif; ?>
+
+      <?php if ( is_active_sidebar( 'footer-widget-three' ) ) : ?>
+        <div class="box"><?php dynamic_sidebar( 'footer-widget-three' ); ?></div>
+      <?php endif; ?>
+
+      <?php if ( is_active_sidebar( 'footer-widget-four' ) ) : ?>
+        <div class="box"><?php dynamic_sidebar( 'footer-widget-four' ); ?></div>
+      <?php endif; ?>
+
   </div>
 </footer>
 <div class="copyright">

@@ -653,6 +653,10 @@ textarea {
   margin: 0 15px;
 }
 
+.footer-widgets aside div {
+  margin-top: -5px;
+}
+
 .copyright {
   background-color: #fff;
   display: flex;
